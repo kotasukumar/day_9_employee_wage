@@ -8,7 +8,7 @@ i=0
 day=0
 hours=0
 case $num in
-	1) while((day!=20 && hours!=100))
+	1) for((i=0;i<=20;i++))
 	do
 		if(($((RANDOM%2))==0))
 		then
@@ -22,13 +22,13 @@ case $num in
 			echo "day $i regular_emloyee is absent"
 			echo 	"todays wage is zero:"
 		fi
-			((i++))
 	done
-                	echo " monthly wage of the regular employee is:" $monthly_wage
+			echo "working hours in a month are: " $hours
+			echo " monthly wage of the regular employee is:" $monthly_wage
 	;;
 #checking parttime employee is present or absent
 
-	2)  while((day!=20 && hours!=100))
+	2)  for((i=0;i<=20;i++))
         do
 		if(($((RANDOM%2))==0))
         	then
@@ -42,8 +42,8 @@ case $num in
                 	echo "day $i part_time employee is absent"
                 	echo    "todays wage is zero:"
         	fi
-				((i++))
 	done
+			echo "woking hours in a month are:" $hours
                         echo " monthly wage of the part time employee is:" $monthly_wage
 	;;
 	*) echo "invalid input - number must be 0 or 1"
