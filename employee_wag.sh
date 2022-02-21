@@ -3,6 +3,8 @@
 	if(($((RANDOM%2))==0))
 	then
 		echo "present"
+		echo "todays wage:" $((20*8))
 	else
 		echo "absent"
+		echo 	"todays wage is zero:"
 	fi
