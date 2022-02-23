@@ -16,14 +16,20 @@ case $num in
 				daily_wage=$((20*8))
 				monthly_wage=$((monthly_wage+$daily_wage))
 					salary[$i]=$daily_wage
+					day1[$i]=$i
                			((day++))
                 		hours=$((hours+8))
 		else
 				salary[$i]=0
+				day1[$i]=$i
 
 		fi
 	done
-			echo ${salary[@]}
+		echo "day - daily_wage"
+		for((i=0;i<=20;i++))
+		do
+			echo ${day1[i]}" - " ${salary[i]}
+		done
 			echo "working hours in a month are: " $hours
 			echo " monthly wage of the regular employee is:" $(($monthly_wage+$weekend))
 	;;
@@ -36,13 +42,20 @@ case $num in
                                 daily_wage=$((20*8))
                                 monthly_wage=$((monthly_wage+$daily_wage))
                         		salary[$i]=$daily_wage
+					day1[$i]=$i
                                 ((day++))
                                 hours=$((hours+8))
 		else
                 		salary[$i]=0
+				day1[$i]=$i
         	fi
 	done
-			echo ${salary[@]}
+                echo "day - daily_wage"
+                for((i=0;i<=20;i++))
+                do
+                        echo ${day1[i]}" - " ${salary[i]}
+                done
+
 			echo "woking hours in a month are:" $hours
                         echo "monthly wage of the part time employee is:" $(($monthly_wage+$weekend))
 	;;
