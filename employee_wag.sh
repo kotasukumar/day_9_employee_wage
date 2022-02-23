@@ -15,14 +15,15 @@ case $num in
 		then
 				daily_wage=$((20*8))
 				monthly_wage=$((monthly_wage+$daily_wage))
-			echo "day $i   present   daily wage $daily_wage"
+					salary[$i]=$daily_wage
                			((day++))
                 		hours=$((hours+8))
 		else
-			echo "day $i   absent   daily wage 0"
+				salary[$i]=0
 
 		fi
 	done
+			echo ${salary[@]}
 			echo "working hours in a month are: " $hours
 			echo " monthly wage of the regular employee is:" $(($monthly_wage+$weekend))
 	;;
@@ -34,15 +35,16 @@ case $num in
         	then
                                 daily_wage=$((20*8))
                                 monthly_wage=$((monthly_wage+$daily_wage))
-                        echo  "day $i   present   daily wage $daily_wage"
+                        		salary[$i]=$daily_wage
                                 ((day++))
                                 hours=$((hours+8))
 		else
-                	echo  "day $i   absent   daily wage 0"
+                		salary[$i]=0
         	fi
 	done
+			echo ${salary[@]}
 			echo "woking hours in a month are:" $hours
-                        echo " monthly wage of the part time employee is:" $(($monthly_wage+$weeknd))
+                        echo "monthly wage of the part time employee is:" $(($monthly_wage+$weekend))
 	;;
 	*) echo "invalid input - number must be 0 or 1"
 esac
